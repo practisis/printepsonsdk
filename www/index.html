@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,4 +20,17 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>
+  <script>
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+    // Now safe to use the PhoneGap API
+	window.plugin.printer.isServiceAvailable(
+    function (isAvailable, installedAppIds) {
+        alert('The following print apps are installed on your device: ' + installedAppIds.join(', '));
+    }
+	);
+}
+
+</script>
 </html>
